@@ -46,11 +46,11 @@ class AdminController extends Controller
 
     public function update(AdminRequest $request, User $user)
     {
-        if($user->update($request->input()))
+        if($user->update($request->all()) !== false)
         {
             $request->session()->flash('alert', ['class'=>'success','message'=>'Profil utilisateur mis à jour']);
         }
-        //dd($request->input());
+        //dd($request->all());
         
         return redirect(url()->previous());
     }
