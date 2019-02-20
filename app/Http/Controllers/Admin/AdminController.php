@@ -44,13 +44,15 @@ class AdminController extends Controller
         return view('admin.edit',compact('user'));
     }
 
-    public function update(AdminRequest $request, User $user)
+    public function update($id, Request $request)
     {
-        if($user->update($request->all()) !== false)
-        {
-            $request->session()->flash('alert', ['class'=>'success','message'=>'Profil utilisateur mis à jour']);
-        }
-        //dd($request->all());
+         // if($id->update($request->all()) !== false)
+         // {
+         //     $request->session()->flash('alert', ['class'=>'success','message'=>'Profil utilisateur mis à jour']);
+         // }
+         
+        User::find($id)->update($request->all());
+        $request->session()->flash('alert', ['class'=>'success','message'=>'Profil utilisateur mis à jour']);
         
         return redirect(url()->previous());
     }

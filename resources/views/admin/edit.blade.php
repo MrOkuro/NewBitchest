@@ -10,7 +10,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Dashboard</div>
 
-        <form class="form-horizontal" method="POST" action="{{ route('admin.users.update',$user->id) }}">
+        <form class="form-horizontal" method="POST" action="{{ route('admin.users.update', $user->id) }}">
                             {{ csrf_field() }}
                         {{ method_field('PUT') }} 
 
@@ -40,6 +40,9 @@
                                     <option value="1"  > Admin </option>                                       
                             </select>
                         </div> 
+
+                        {{-- <input type="hidden" name="id" value="{{ $user->id }}"> --}}
+                         
                 </div>
                 
                       <div class="form-group">

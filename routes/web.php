@@ -45,7 +45,7 @@ Route::get('/admin', 'Admin\AdminController@index')->name('admin.index');
 Route::get('/admin/users/create', 'Admin\AdminController@create')->name('admin.users.create');
 Route::post('/admin/users/store', 'Admin\AdminController@store')->name('admin.users.store');
 Route::get('/admin/users/edit/{id}', 'Admin\AdminController@edit')->name('admin.users.edit');
-Route::put('/admin/users/update', 'Admin\AdminController@update')->name('admin.users.update');
+Route::put('/admin/users/update/{id}', 'Admin\AdminController@update')->name('admin.users.update');
 Route::delete('/admin/users/delete/{id}', 'Admin\AdminController@delete')->name('admin.users.delete');
 
 Route::get('/admin/crypto/liste', 'Admin\CryptoController@index')->name('admin.crypto.index');
