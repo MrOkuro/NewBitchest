@@ -29,7 +29,7 @@ class CotationsTableSeeder extends Seeder
 		}
 
 		
-		/*
+		
 			$pdo = new PDO('mysql:host=localhost;dbname=bitchest', 'root', '', array(
 		    PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
@@ -37,12 +37,14 @@ class CotationsTableSeeder extends Seeder
 			$cryptos = $resultat -> fetchAll(PDO::FETCH_ASSOC);	
 
 			foreach($cryptos as $c){
+			//dd($c);
 		    extract($c);
+		    $crypto_id = getFirstCotation($id);
 		    $valeur_nominale = getFirstCotation($nom);
 		    $date = date('Y-m-d', time()+ (6*86400));
 
 		    // ATTENTIION POTENTIELLEMENT A MODIFIER
-		    $pdo -> exec("insert into cotations (crypto_id, valeur, date, cours, evolution) value($crypto_id, $valeur_nominale, '$date', 0.00, 0.00 )");
+		    $pdo -> exec("insert into cotations (crypto_id, valeur, date, cours, evolution) value(".$crypto_id.",".$valeur_nominale.",'".$date."',". 0.00.",". 0.00 .")");
 		    $valeur[] = $valeur_nominale;
 
 		    echo '<h1>Valeur nominale : ' . $valeur_nominale .  '</h1>';
@@ -63,9 +65,9 @@ class CotationsTableSeeder extends Seeder
 		        echo 'Pourcentage : ' . $cours . '<hr/>';
 
 		        // ATTENTIION POTENTIELLEMENT A MODIFIER
-		        $pdo -> exec("insert into cotations (crypto_id, valeur, date, cours, evolution) value($crypto_id, $valeur_actuelle, '$date', $cours, $evolution )");
+		        $pdo -> exec("insert into cotations (crypto_id, valeur, date, cours, evolution) value(".$crypto_id.",".$valeur_nominale.",'".$date."',". 0.00.",". 0.00 .")");
 		    }
-		} */
+		} 
 
 		/*$cotations = Cotation::all();
         foreach ($cotations as $cotation) {
