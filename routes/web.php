@@ -71,12 +71,9 @@ Route::get('/client/crypto/vente', 'VenteController@index')->name('user.crypto.v
 Route::get('/client/liste/crypto/cotations', 'CryptoController@index_cotations')->name('user.crypto.cotation.index');
 Route::get('/client/crypto/show/{id}/cotations', 'CotationController@show')->name('user.cotation.show');
 
+//Graphique
+Route::get('/client/crypto/cotation/graph/{id}','GraphController@show')->name('graphique.cotation');
+
 
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

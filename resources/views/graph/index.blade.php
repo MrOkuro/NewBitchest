@@ -11,7 +11,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Affichage du graphique de la cotation de la cryptomonnaie</div>
 
-                
+                    <div class="panel-body">
+                        {!! $chart->html() !!}
+                    </div>
 
 
             </div>
@@ -19,4 +21,6 @@
 
     </div>
 </div>
+{!! Charts::scripts() !!}
+{!! $chart->script() !!}
 @endsection
