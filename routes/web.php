@@ -54,6 +54,8 @@ Route::get('/admin/crypto/liste', 'Admin\CryptoController@index')->name('admin.c
 Route::get('/client', 'UserController@index')->name('user.index');
 Route::get('/client/edit/{id}', 'UserController@edit')->name('user.edit');
 Route::get('/client/update/{id}', 'UserController@update')->name('user.update');
+Route::get('/client/solde/create', 'UserController@createsolde')->name('user.index.solde.create');
+Route::post('/client/solde/store', 'UserController@store')->name('user.index.solde.store');
 //Route::get('/client/wallet/{id}', 'WalletController@show')->name('user.wallet.show');
 
 //liste cryptomonnaie

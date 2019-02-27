@@ -11,3 +11,21 @@ function AfficheFormVente(obj)
     $( "#Vente" ).empty().append(data);
   });
 }
+
+
+
+function AfficheFormSolde(url)
+{
+  console.log(url);
+  $.ajax({
+    url: url,
+    method: "GET"
+  }).done(function( data ) {
+    console.log('solde ok');
+    console.log(data);
+    $( "#solde" ).empty().append(data);
+  }).fail(function( data ) {
+    console.log('solde nok');
+    console.log(data);
+  });
+}
