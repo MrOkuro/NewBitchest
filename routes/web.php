@@ -66,6 +66,7 @@ Route::post('/client/crypto/transaction/achat','TransactionController@store')->n
 //achat+vente
 Route::get('/client/crypto/achat', 'AchatController@index')->name('user.crypto.achat');
 Route::get('/client/crypto/vente', 'VenteController@index')->name('user.crypto.vente');
+Route::get('/client/crypto/form/vente/{id}', 'VenteController@getFormVente')->name('user.crypto.vente.form');
 
 //cotations
 Route::get('/client/liste/crypto/cotations', 'CryptoController@index_cotations')->name('user.crypto.cotation.index');

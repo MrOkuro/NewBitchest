@@ -1,11 +1,11 @@
-function affiche_form_achat(url)
+function AfficheFormVente(obj)
 {
-  
-  var request = $.ajax({
-    url: url,
+  crypto_id = obj.options[obj.selectedIndex].value;
+  $('#Vente').show();
+  $.ajax({
+    url: '/client/crypto/form/vente/'+crypto_id,
     method: "GET"
-  });  
-  request.done(function( data ) {
-    $( "#form_achat" ).empty().append(data);
+  }).done(function( data ) {
+    $( "#Vente" ).empty().append(data);
   });
 }

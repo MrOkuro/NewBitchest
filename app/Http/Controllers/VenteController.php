@@ -12,7 +12,16 @@ class VenteController extends Controller
     public function index()
     {
         $cryptos = Crypto::all();   	
-        return view('crypto.vente',compact('cryptos'));
+        return view('transaction.vente',compact('cryptos'));
+    }
+
+
+    public function getFormVente($crypto_id)
+    {
+        
+        $transaction = Transaction::where('crypto_id', '=',$crypto_id)->latest()->first();       
+        dd($transaction);
+        return view('transaction.form_create_vente',compact('transaction'));
     }
 
     /*public function getVente()

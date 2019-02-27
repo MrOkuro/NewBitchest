@@ -12,7 +12,7 @@ class AchatController extends Controller
     public function index()
     {
         $cryptos = Crypto::all();   	
-        return view('crypto.achat',compact('cryptos'));
+        return view('transaction.achat',compact('cryptos'));
     }
 
     /*public function getAchat()
