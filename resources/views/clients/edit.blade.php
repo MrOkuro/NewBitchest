@@ -11,7 +11,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Dashboard</div>
 
-                    <form class="form-horizontal" method="POST" action="{{ route('admin.users.update', $user->id) }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('admin.users.update', Auth::user()->id) }}">
                             {{ csrf_field() }}
                     {{ method_field('PUT') }} 
 
@@ -34,13 +34,12 @@
                 @endif
             </div>
             
-            <div class="col-md-3">
-                <label for="admin" class="control-label font-weight-bold">@lang('Rôle utilisateur')</label>
-                <select id="admin" class="form-control" name="admin">
-                    <option value=""> Liste rôle </option>                                
-                        <option value="0"  > Client </option>
-                        <option value="1"  > Admin </option>                                       
-                </select>
+            <div class="form-group col-md-2">
+                    <label for="solde" class="control-label font-weight-bold">@lang('Solde')</label>
+                    <input id="solde" type="text" class="form-control " name="solde" value="{{ (!empty($user->solde)) ? $user->solde : old('solde') }}" placeholder="solde" autofocus>
+                    @if ($errors->has('solde'))
+                        <div class="help-block text-danger font-italic"></div>
+                    @endif
             </div>
             
 

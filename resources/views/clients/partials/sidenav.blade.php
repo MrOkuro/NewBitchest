@@ -1,7 +1,8 @@
 <div class="col-md-4 SideNav">
     <ul class="list-group">
-    	
-        <li class="list-group-item"><a href=""><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Données personnelles</a></li>
+        
+
+        <li class="list-group-item"><a href="{{ route('user.edit', Auth::user()->id) }}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Données personnelles</a></li>
         
     </ul>
     <ul class="list-group">
@@ -13,7 +14,8 @@
     <ul class="list-group">
         
             <li class="list-group-item">Mon solde en Euros : <strong> €</strong>         <div class="form-group ">
-                <a class=" btn btn-sm btn-primary ml-2 small text-white" onclick="AfficheFormDevis('');" >Crediter Solde <i class="fas fa-plus"></i>
+                <a class=" btn btn-sm btn-primary ml-2 small text-white" onclick="AfficheFormDevis('');" >
+                    Crediter Solde <i class="fas fa-plus"></i>
                 </a>
                 <div class="col-md-30" id='solde'>
     
