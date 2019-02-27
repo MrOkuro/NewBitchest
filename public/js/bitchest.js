@@ -1,5 +1,7 @@
 function AfficheFormVente(obj)
 {
+	console.log('form vente ok');
+	console.log(obj);
   crypto_id = obj.options[obj.selectedIndex].value;
   $('#Vente').show();
   $.ajax({

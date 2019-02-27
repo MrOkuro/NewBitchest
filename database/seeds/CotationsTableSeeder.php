@@ -30,7 +30,7 @@ class CotationsTableSeeder extends Seeder
 
 		
 		
-			$pdo = new PDO('mysql:host=localhost;dbname=bitchest', 'root', '', array(
+			$pdo = new PDO('mysql:host=localhost;dbname=newbitchest', 'root', '', array(
 		    PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
 			$resultat = $pdo -> query('select * from cryptos');

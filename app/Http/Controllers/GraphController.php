@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Charts;
-use DB;
+use App\Charts\SampleChart;
 use App\Cotation;
 use App\Crypto;
+use App\User;
+use Illuminate\Http\Request;
 
 class GraphController extends Controller
 {
     public function show($crypto_id)
     {   
         
-        $cotations = Cotation::where(DB::raw('crypto_id','=',$crypto_id)->with(['crypto']))->get();
-        $cryptos = Crypto::find($crypto_id);
+        //$cotations = Cotation::where('crypto_id','=',$crypto_id)->with(['crypto'])->whereDate('created_at')->count();
+        /*$cotations = Cotation::whereDate('created_at')->count();
+        $cryptos = Crypto::find($crypto_id); */
+
+        $today_users = User::whereDate('created_at', today())->count();
+        $yesterday_users = User::whereDate('created_at', today()->subDays(1))->count();
+        $users_2_days_ago = User::whereDate('created_at', today()->subDays(2))->count();
         
-        $chart = Charts::database($cotations, 'bar', 'highcharts')
-      ->title("Monthly new Register Users")
-      ->elementLabel("Total Users")
-      ->dimensions(1000, 500)
-      ->responsive(false)
-      ->groupByMonth(date('Y'), true);
+      $chart = new SampleChart;
+      $chart->labels(['Yesterday', 'Today']);
+      $chart->dataset('My dataset', 'line', [$users_2_days_ago, $yesterday_users, $today_users]);
 
 
        	

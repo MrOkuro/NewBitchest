@@ -17,6 +17,7 @@
                                     <th scope="col" class="col-auto small">@lang('Logo')</th>
                                     <th scope="col" class="col-auto small">@lang('Nom')</th>
                                     <th scope="col" class="col-auto small">@lang('Sigle')</th> 
+                                    <th scope="col" class="col-auto small">@lang('Historique')</th> 
                                     <th scope="col" class="col-auto small">@lang('Afficher graphique')</th>                                          
                                 </tr>
                             <tbody>

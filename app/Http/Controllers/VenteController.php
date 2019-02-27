@@ -20,7 +20,7 @@ class VenteController extends Controller
     {
         
         $transaction = Transaction::where('crypto_id', '=',$crypto_id)->latest()->first();       
-        dd($transaction);
+        //dd($transaction);
         return view('transaction.form_create_vente',compact('transaction'));
     }
 
