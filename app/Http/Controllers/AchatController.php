@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Crypto;
 use App\Transaction;
 use App\Cotation;
+use App\User;
 
 class AchatController extends Controller
 {
