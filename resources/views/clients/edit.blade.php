@@ -32,17 +32,17 @@
                 @if ($errors->has('email'))
                     <div class="help-block text-danger font-italic"></div>
                 @endif
-            </div>
-            
-            <div class="form-group col-md-2">
-                    <label for="solde" class="control-label font-weight-bold">@lang('Solde')</label>
+            </div>    
+        </div>
+
+        <div class="form-row form-group">
+                <div class="form-group col-md-2">
+                    <label for="solde" class="control-label font-weight-bold">@lang('Crediter votre solde')</label>
                     <input id="solde" type="text" class="form-control " name="solde" value="{{ (!empty($user->solde)) ? $user->solde : old('solde') }}" placeholder="solde" autofocus>
                     @if ($errors->has('solde'))
                         <div class="help-block text-danger font-italic"></div>
                     @endif
             </div>
-            
-
         </div>
             
       <div class="form-group">

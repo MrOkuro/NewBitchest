@@ -9,7 +9,9 @@ use App\User;
 class SideNavController extends Controller
 {
     public function index()
-    {            
+    {    
+        //Auth::id() > 0    
+        $user= User::
     	return view('clients.partials.sidenav');
     }
 
