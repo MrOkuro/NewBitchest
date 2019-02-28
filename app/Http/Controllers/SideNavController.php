@@ -9,7 +9,7 @@ use App\User;
 class SideNavController extends Controller
 {
     public function index()
-    {            
+    {           
     	return view('clients.partials.sidenav');
     }
 

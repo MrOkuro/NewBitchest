@@ -71,7 +71,7 @@ Route::get('/client/crypto/vente', 'VenteController@index')->name('user.crypto.v
 Route::get('/client/crypto/form/vente/{id}', 'VenteController@getFormVente')->name('user.crypto.vente.form');
 
 //cotations
-Route::get('/client/liste/crypto/cotations', 'CryptoController@index_cotations')->name('user.crypto.cotation.index');
+Route::get('/client/liste/crypto/cotations', 'CotationController@index')->name('user.crypto.cotation.index');
 Route::get('/client/crypto/show/{id}/cotations', 'CotationController@show')->name('user.cotation.show');
 
 //Graphique
