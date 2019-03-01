@@ -19,20 +19,26 @@ class Cotation extends Model
 
     public static function getMaxCotationByCrypto()
     {
-    	return DB::table('cotations')
-            ->select(DB::Raw('cryptos.id,
-                            cryptos.nom,
-                            cryptos.image,
-                            cotations.valeur,
-                            cotations.cours,
-                            cotations.evolution,
-                             cotations.date'))
-			->join('cryptos', 'cryptos.id', '=', 'cotations.crypto_id') {
-                ->select(max('cotations.id')
-                ->groupBy('cotations.id')
-
-            }
-			->groupBy('cryptos.id,cryptos.nom,cryptos.image,cotations.valeur,cotations.cours,cotations.evolution, cotations.date');
+    	$query = '
+    	SELECT
+			cotations.id
+    		,cotations.valeur
+    		,cotations.date
+    		,cotations.evolution
+    		,cryptos.id
+    		,cryptos.nom
+		FROM (
+				SELECT
+					MAX(Id) as id
+					,crypto_id
+				FROM Cotations
+				GROUP BY crypto_id
+			) AS MaxCotation
+			INNER JOIN Cotations ON Cotations.id = MaxCotation.id
+			INNER JOIN Cryptos ON Cryptos.id = Cotations.crypto_id
+    	';
+    	return DB::query(DB::Raw($query));
     }
+}
 
 

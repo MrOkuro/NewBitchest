@@ -17,7 +17,7 @@ class CotationController extends Controller
        // $cotations = Cotation::where('crypto_id = (select max(`date`) from cotations)')->get();
         $cotations = Cotation::getMaxCotationByCrypto()->get();
         dd($cotations);
-        return view('crypto.cotation',compact('cryptos'));
+        return view('crypto.cotation',compact('cotations'));
     } 
 
 
