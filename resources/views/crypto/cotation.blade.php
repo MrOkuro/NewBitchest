@@ -21,15 +21,15 @@
                                     <th scope="col" class="col-auto small">@lang('Afficher graphique')</th>                                          
                                 </tr>
                             <tbody>
-                                @foreach ($cryptos as $crypto)  
+                                @foreach ($cotations as $cotation)  
 
                                 <tr>
-                                    <td> <img src="{{URL::asset('/images')}}/{{ $crypto->image }}"> </td>
-                                    <td>{{ $crypto->nom }}</td>
-                                    <td>{{ $crypto->sigle }}</td>
-                                    <td> <a class="btn btn-sm btn-primary" href="{{ route('user.cotation.show', [$crypto->id] ) }}" 
+                                    <td> <img src="{{URL::asset('/images')}}/{{ $cotation->image }}"> </td>
+                                    <td>{{ $cotation->nom }}</td>
+                                    <td>{{ $cotation->taux }}</td>
+                                    <td> <a class="btn btn-sm btn-primary" href="{{ route('user.cotation.show', [$cotation->id] ) }}" 
                                     role="button">@lang('Historique des cotations') </a> </td>
-                                    <td> <a class="btn btn-sm btn-primary" href="{{ route('graphique.cotation',[$crypto->id] ) }}" 
+                                    <td> <a class="btn btn-sm btn-primary" href="{{ route('graphique.cotation',[$cotation->id] ) }}" 
                                         role="button">@lang('Graphique') </a> 
                                      </td>
                                 </tr>

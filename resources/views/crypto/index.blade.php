@@ -16,20 +16,23 @@
                                 <tr>
                                     <th scope="col" class="col-auto small">@lang('Logo')</th>
                                     <th scope="col" class="col-auto small">@lang('Nom')</th>
-                                    <th scope="col" class="col-auto small">@lang('Sigle')</th> 
-                                    <th scope="col" class="col-auto small">@lang('Quantité')</th>
+                                    <th scope="col" class="col-auto small">@lang('Quantité')</th> 
+                                    <th scope="col" class="col-auto small">@lang('Montant')</th>
                                     <th scope="col" class="col-auto small">@lang('Historique des achats')</th>
 
                                 </tr>
                             <tbody>
-                                @foreach ($cryptos as $crypto)  
+                                @foreach ($achats_liste as $liste)
+                                
+                                
+                                 
 
                                 <tr>
-                                    <td> <img src="{{URL::asset('/images')}}/{{ $crypto->image }}"> </td>
-                                    <td>{{ $crypto->nom }}</td>
-                                    <td>{{ $crypto->sigle }}</td>
-                                    <td> 10 </td>
-                                    <td> <a class="btn btn-sm btn-danger" href="{{ route('user.transaction.show', [$crypto->id] ) }}" 
+                                    <td> <img src="{{URL::asset('/images')}}/{{ $liste['crypto']->image }}"> </td>
+                                    <td>{{ $liste['crypto']->nom }}</td>                                    
+                                    <td> {{ $liste['quantite_crypto'] }} </td>
+                                    <td> {{ $liste['achat'] }} </td>
+                                    <td> <a class="btn btn-sm btn-danger" href="{{ route('user.transaction.show', [$liste['crypto']->id] ) }}" 
                                     role="button">@lang('Historique') </a>                                
                                   </td>
                </tr>
