@@ -22,21 +22,19 @@
 
                                 </tr>
                             <tbody>
-                                @foreach ($achats_liste as $liste)
-                                
-                                
-                                 
-
-                                <tr>
-                                    <td> <img src="{{URL::asset('/images')}}/{{ $liste['crypto']->image }}"> </td>
-                                    <td>{{ $liste['crypto']->nom }}</td>                                    
-                                    <td> {{ $liste['quantite_crypto'] }} </td>
-                                    <td> {{ $liste['achat'] }} </td>
-                                    <td> <a class="btn btn-sm btn-danger" href="{{ route('user.transaction.show', [$liste['crypto']->id] ) }}" 
-                                    role="button">@lang('Historique') </a>                                
-                                  </td>
-               </tr>
+                                @foreach ($achats_liste as $liste)  
+                                                    
+                                 <tr>
+                                        <td> <img src="{{URL::asset('/images')}}/{{ $liste['crypto']->image }}"> </td>
+                                        <td>{{ $liste['crypto']->nom }}</td>                                    
+                                        <td> {{ $liste['quantite_crypto'] }} </td>
+                                        <td> {{ $liste['achat'] }} </td>
+                                        <td> <a class="btn btn-sm btn-danger" href="{{ route('user.transaction.show', [$liste['crypto']->id] ) }}" 
+                                        role="button">@lang('Historique') </a>                                
+                                    </td>
+                                </tr>
                                 @endforeach
+                                
                             </tbody>                
                         </thead>
                     </table> 

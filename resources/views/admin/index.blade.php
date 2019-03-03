@@ -17,7 +17,9 @@
                         <thead class="thead-dark">
                                 <tr>
                                     <th scope="col" class="col-auto small">@lang('Nom')</th>
-                                    <th scope="col" class="col-auto small">@lang('Email')</th>        
+                                    <th scope="col" class="col-auto small">@lang('Email')</th> 
+                                    <th scope="col" class="col-auto small">@lang('Statut')</th> 
+                                    <th scope="col" class="col-auto small">@lang('Actions')</th>       
                                 </tr>
                             <tbody>
                                 @foreach ($users as $user)  
@@ -25,12 +27,17 @@
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    @if($user->admin > 0)
+                                            <td>Admin</td>
+                                    @else
+                                            <td>Client</td>
+                                    @endif
                                     <td> 
                                        <a href=" {{ route('admin.users.edit', $user->id) }}"> <button type="button" class="btn btn-primary"  onclick="">
                                                     @lang('Modifier informations clients')
                                         </button></a>
-                                    </td>
-                                    <td>
+                                    
+                                    
                                         <form method="POST" action="{{ route('admin.users.delete', $user->id) }}">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}

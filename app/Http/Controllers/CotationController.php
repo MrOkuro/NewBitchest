@@ -19,9 +19,7 @@ class CotationController extends Controller
         //$cotations = Cotation::getMaxCotationByCrypto()->get();
         //$cryptos = Crypto::all();
         //$cotations = Cotation::all();
-        //dd($cotations);        
-        //$users = User::where('id', Auth::id())->get();
-        //$wallets = Wallet::where('user_id', Auth::id())->get();
+        //dd($cotations);       
         $cotations = DB::table('cotations')
             ->select(DB::raw(' cryptos.id,cryptos.nom, cryptos.image, max(cotations.date) AS date,
                              ANY_VALUE(cotations.taux) AS taux'))

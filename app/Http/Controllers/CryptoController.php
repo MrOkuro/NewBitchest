@@ -44,10 +44,7 @@ class CryptoController extends Controller
                     $achats_liste[$transaction->crypto_id]['achat'] = $taux;
                 }
             }
-                else 
-                {
-                    $achats_liste[$transaction->crypto_id]['quantite_crypto'] += $transaction->quantite_crypto;
-                }
+
             $total += $transaction->quantite_crypto*$achat->taux;
         }
         //dump($transactions);

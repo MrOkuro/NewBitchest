@@ -12,12 +12,4 @@ class SideNavController extends Controller
     {           
     	return view('clients.partials.sidenav');
     }
-
-/*
-    public function show($id)
-    {    
-        $user = User::find($id); 
-        dd($user);       
-    	return view('clients.edit', compact('user'));
-    } */
 }

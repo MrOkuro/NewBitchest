@@ -19,12 +19,12 @@
                                     <th scope="col" class="col-auto small">@lang('Cours actuel')</th>       
                                 </tr>
                             <tbody>
-                                @foreach ($cryptos as $crypto)  
+                                @foreach ($cotations as $cotation)  
 
                                 <tr>
-                                    <td>{{ $crypto->nom }} <img src="{{URL::asset('/images')}}/{{ $crypto->image }}"></td>
-                                    <td>{{ $crypto->sigle }}</td>
-                                    <td> %%%%%</td>
+                                    <td>{{ $cotation->nom }} <img src="{{URL::asset('/images')}}/{{ $cotation->image }}"></td>
+                                    <td>{{ $cotation->sigle }}</td>
+                                    <td> {{ $cotation->taux }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>                

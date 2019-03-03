@@ -48,7 +48,7 @@ Route::get('/admin/users/edit/{id}', 'Admin\AdminController@edit')->name('admin.
 Route::put('/admin/users/update/{id}', 'Admin\AdminController@update')->name('admin.users.update');
 Route::delete('/admin/users/delete/{id}', 'Admin\AdminController@delete')->name('admin.users.delete');
 
-Route::get('/admin/crypto/liste', 'Admin\CryptoController@index')->name('admin.crypto.index');
+Route::get('/admin/crypto/liste', 'Admin\CryptoController@index_cotations_admin')->name('admin.crypto.index');
 
 //Route pour user normal profil
 Route::get('/client', 'UserController@index')->name('user.index');
