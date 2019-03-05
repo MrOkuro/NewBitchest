@@ -28,13 +28,13 @@ class User extends Authenticatable
     ];
 
     public function transaction(){
-        return $this->hasMany('App\Transaction');
+        return $this->hasMany(Transaction::class);
     }
 
-    public function isAdmin(){
+    /*public function isAdmin(){
         if($this->admin == 1){
             return true;
         }
         return false;
-    }
+    } */
 }

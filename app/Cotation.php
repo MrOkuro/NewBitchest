@@ -14,31 +14,10 @@ class Cotation extends Model
 
     public function crypto() 
 	{
-		return $this->belongsTo('App\Crypto');
+		return $this->belongsTo(Crypto::class);
     }
 
-    public static function getMaxCotationByCrypto()
-    {
-    	$query = '
-    	SELECT
-			cotations.id
-    		,cotations.valeur
-    		,cotations.date
-    		,cotations.evolution
-    		,cryptos.id
-    		,cryptos.nom
-		FROM (
-				SELECT
-					MAX(Id) as id
-					,crypto_id
-				FROM Cotations
-				GROUP BY crypto_id
-			) AS MaxCotation
-			INNER JOIN Cotations ON Cotations.id = MaxCotation.id
-			INNER JOIN Cryptos ON Cryptos.id = Cotations.crypto_id
-    	';
-    	return DB::query(DB::Raw($query));
-    }
+
 }
 
 

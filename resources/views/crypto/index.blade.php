@@ -34,7 +34,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                                
+                                {{ $total }}
                             </tbody>                
                         </thead>
                     </table> 

@@ -28,8 +28,7 @@ class CryptoController extends Controller
             $crypto = Crypto::where('id', $transaction->crypto_id)->first();
             $achats = DB::table('cotations')
                     ->select(DB::raw(' max(cotations.date) AS date, 
-                        ANY_VALUE(cotations.taux) AS taux,
-                        ANY_VALUE(cotations.crypto_id) AS crypto_id'))
+                        max(cotations.taux) AS taux'))
                     ->where('crypto_id', $transaction->crypto_id)
                     ->groupBy('cotations.crypto_id')
                     ->orderBy('cotations.crypto_id')
@@ -49,10 +48,11 @@ class CryptoController extends Controller
         }
         //dump($transactions);
         //dd($achats);
+        //dd($taux);
         //dd($achats_liste);
         //dd($total);
         
-    	return view('crypto.index',compact('achats_liste','cotations','users'));
+    	return view('crypto.index',compact('achats_liste','cotations','users','total'));
     }
 
 

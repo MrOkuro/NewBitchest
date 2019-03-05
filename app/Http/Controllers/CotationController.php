@@ -22,7 +22,7 @@ class CotationController extends Controller
         //dd($cotations);       
         $cotations = DB::table('cotations')
             ->select(DB::raw(' cryptos.id,cryptos.nom, cryptos.image, max(cotations.date) AS date,
-                             ANY_VALUE(cotations.taux) AS taux'))
+                             max(cotations.taux) AS taux'))
             ->join('cryptos', 'cotations.crypto_id', '=', 'cryptos.id')
             ->groupBy('cotations.crypto_id')
             ->orderBy('cotations.crypto_id')
@@ -36,6 +36,7 @@ class CotationController extends Controller
     {
         $cotations = Cotation::where('crypto_id','=',$crypto_id)->with(['crypto'])->get();
         $cryptos = Crypto::find($crypto_id);
+        dump($cotations);
         return view('crypto.show_historique_cotation',compact('cryptos','cotations'));
     }
 }

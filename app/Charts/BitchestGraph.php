@@ -2,7 +2,7 @@
 
 namespace App\Charts;
 
-use ConsoleTVs\Charts\Classes\Chartjs\Chart;
+use ConsoleTVs\Charts\Classes\HighCharts\Chart;
 
 class BitchestGraph extends Chart
 {

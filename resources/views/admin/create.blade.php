@@ -35,7 +35,7 @@
 
             <div class="col-md-3">
                 <label for="password" class="control-label font-weight-bold">@lang('password')</label>
-                <input id="password" type="text" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }} " name="password" value="{{ old('password') }}" placeholder="password" autofocus>
+                <input id="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }} " name="password" value="{{ old('password') }}" placeholder="password" autofocus>
                 @if ($errors->has('password'))
                     <div class="help-block text-danger font-italic"></div>
                 @endif
