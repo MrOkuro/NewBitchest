@@ -20,6 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->float('solde')->nullable();
             $table->boolean('admin')->default(false);
+            $table->string('ville')->nullable();
+            $table->string('adresse')->nullable();
+            $table->integer('code_postal')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

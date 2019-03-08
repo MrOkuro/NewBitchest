@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','admin', 'solde'
+        'name', 'email', 'password','admin','ville','adresse','code_postal', 'solde'
     ];
 
     /**
@@ -31,10 +31,4 @@ class User extends Authenticatable
         return $this->hasMany(Transaction::class);
     }
 
-    /*public function isAdmin(){
-        if($this->admin == 1){
-            return true;
-        }
-        return false;
-    } */
 }

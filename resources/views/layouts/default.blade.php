@@ -16,7 +16,7 @@
 
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="min-height: 700px;">
         <nav class="navbar navbar-expand-md navbar-light navbar-static-top navbar-laravel">
         <!--<nav class="navbar navbar-default navbar-static-top">-->
             <div class="container">
@@ -101,11 +101,22 @@
     </div>
 
  
-v fdbvefkbvjzbl
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
 
     
 </body>
+<!-- Footer -->
+<footer class="padding-top: 60px;">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:Bitchest
+    
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </html>

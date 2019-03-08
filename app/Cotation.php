@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Cotation extends Model
 {
     protected $fillable = [
-        'crypto_id', 'valeur', 'date','cours','evolution',
+        'crypto_id', 'valeur', 'date','taux'
     ];
 
 

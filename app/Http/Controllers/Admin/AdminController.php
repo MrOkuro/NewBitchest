@@ -27,7 +27,11 @@ class AdminController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user -> save();
+        $user->ville = $request->ville;
+        $user->solde = $request->solde;
+        $user->adresse = $request->adresse;
+        $user->code_postal = $request->code_postal;
+        $user-> save();
         $request->session()->flash('alert', ['class'=>'success','message'=>' Nouvel utilisateur enregistré!!']);
 
         return redirect(url()->previous());

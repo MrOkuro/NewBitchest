@@ -18,14 +18,30 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
-            'admin' => rand(0, 1)
+            'admin' => '1',
+            'ville' => 'PARIS', 
+            'adresse' =>'Rue de l\'administration', 
+            'code_postal' => '75000'
         ]);
 
         DB::table('users')->insert([
             'name' => 'Junior',
             'email' => 'junior@gmail.com',
             'password' => bcrypt('junior'),
-            'admin' => rand(0, 1)
+            'admin' => '0',
+            'ville' => 'TOULOUSE', 
+            'adresse' =>'Rue du Capitole', 
+            'code_postal' => '31000'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'ごく',
+            'email' => 'goku@gmail.com',
+            'password' => bcrypt('goku'),
+            'admin' =>'0',
+            'ville' => 'Rouen', 
+            'adresse' =>'Rue du Rond Point des Vaches', 
+            'code_postal' => '76000'
         ]);
     }
 }

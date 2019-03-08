@@ -28,13 +28,13 @@
                                         <td> <img src="{{URL::asset('/images')}}/{{ $liste['crypto']->image }}"> </td>
                                         <td>{{ $liste['crypto']->nom }}</td>                                    
                                         <td> {{ $liste['quantite_crypto'] }} </td>
-                                        <td> {{ $liste['achat'] }} </td>
+                                        <td> {{ $liste['montant'] }} </td>
                                         <td> <a class="btn btn-sm btn-danger" href="{{ route('user.transaction.show', [$liste['crypto']->id] ) }}" 
                                         role="button">@lang('Historique') </a>                                
                                     </td>
                                 </tr>
                                 @endforeach
-                                {{ $total }}
+                                
                             </tbody>                
                         </thead>
                     </table> 
@@ -45,4 +45,5 @@
         </div>
     </div>
 </div>
+@include('layouts.partials._footer')
 @endsection

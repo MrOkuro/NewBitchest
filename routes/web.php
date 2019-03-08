@@ -32,32 +32,25 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
-
-
-
-
 Route::get('/homeconnexion', 'HomeController@index')->name('home');
 
-
-//Route Admin pour dashbord
+//Routes pour Admin
 Route::get('/admin', 'Admin\AdminController@index')->name('admin.index');
-//Route::get('/admin/users', 'Admin\AdminController@index')->name('admin.users');
 Route::get('/admin/users/create', 'Admin\AdminController@create')->name('admin.users.create');
 Route::post('/admin/users/store', 'Admin\AdminController@store')->name('admin.users.store');
 Route::get('/admin/users/edit/{id}', 'Admin\AdminController@edit')->name('admin.users.edit');
 Route::put('/admin/users/update/{id}', 'Admin\AdminController@update')->name('admin.users.update');
 Route::delete('/admin/users/delete/{id}', 'Admin\AdminController@delete')->name('admin.users.delete');
-
 Route::get('/admin/crypto/liste', 'Admin\CryptoController@index_cotations_admin')->name('admin.crypto.index');
-//Route::get('/admin/crypto/graph/{id}', 'Admin\CryptoController@graph_cotations_admin')->name('admin.crypto.graph');
 
-//Route pour user normal profil
+
+//Routes pour Client
 Route::get('/client', 'UserController@index')->name('user.index');
 Route::get('/client/edit/{id}', 'UserController@edit')->name('user.edit');
 Route::get('/client/update/{id}', 'UserController@update')->name('user.update');
 Route::get('/client/solde/create', 'UserController@createsolde')->name('user.index.solde.create');
 Route::post('/client/solde/store', 'UserController@store')->name('user.index.solde.store');
-//Route::get('/client/wallet/{id}', 'WalletController@show')->name('user.wallet.show');
+
 
 //liste cryptomonnaie
 Route::get('/client/liste/crypto', 'CryptoController@index')->name('user.crypto.index');

@@ -15,10 +15,8 @@
                         <thead class="thead-dark">
                                 <tr>
                                     <th scope="col" class="col-auto small">@lang('Logo')</th>
-                                    <th scope="col" class="col-auto small">@lang('Nom')</th>
-                                    <th scope="col" class="col-auto small">@lang('Montant')</th>
-                                    <th scope="col" class="col-auto small">@lang('Quantité')</th>
-                                    
+                                    <th scope="col" class="col-auto small">@lang('Nom')</th>                                    
+                                    <th scope="col" class="col-auto small">@lang('Quantité')</th>                                    
                                     <th scope="col" class="col-auto small">@lang('Date achat')</th>
 
                                 </tr>
@@ -26,8 +24,7 @@
                             @foreach ($transactions as $transaction)
                                 <tr>
                                     <td> <img src="{{URL::asset('/images')}}/{{ $transaction->crypto->image }}"> </td>
-                                    <td>{{ $transaction->crypto->nom }}</td>
-                                    <td>{{ $transaction->montant }}</td>
+                                    <td>{{ $transaction->crypto->nom }}</td>                                    
                                     <td>{{ $transaction->quantite_crypto }}</td>                                    
                                     <td> {{ \Carbon\Carbon::parse($transaction->created_at)->format('d/m/Y') }} </td>
                                 </tr>
@@ -42,4 +39,5 @@
         </div>
     </div>
 </div>
+@include('layouts.partials._footer')
 @endsection

@@ -33,12 +33,6 @@
 
 
 
-                                <div class="col-md-3">
-                                        <label for="montant" class="control-label font-weight-bold">@lang('Montant')</label>
-                                        <input id="montant" type="text" class="form-control " name="montant" value="" placeholder="" autofocus>
-                                </div>
-
-
                         </div>
 
                         <div class="form-group">
@@ -57,4 +51,5 @@
 
     </div>
 </div>
+@include('layouts.partials._footer')
 @endsection

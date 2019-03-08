@@ -16,11 +16,9 @@ class AddTablesTransactions extends Migration
         Schema::create('transactions', function (Blueprint $table){
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('crypto_id');
-            $table->float('montant');
+            $table->integer('crypto_id');            
             $table->integer('quantite_crypto');
-            //$table->string('type')->nullable();
-            //$table->integer('etat')->nullable();
+            //$table->string('type')->nullable();            
             $table->timestamps();
         });
 

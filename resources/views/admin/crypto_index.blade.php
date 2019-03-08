@@ -16,8 +16,7 @@
                                 <tr>
                                     <th scope="col" class="col-auto small">@lang('Nom')</th>
                                     <th scope="col" class="col-auto small">@lang('Sigle')</th> 
-                                    <th scope="col" class="col-auto small">@lang('Cours actuel')</th>
-                                    <th scope="col" class="col-auto small">@lang('Graphique')</th>        
+                                    <th scope="col" class="col-auto small">@lang('Cours actuel')</th>                                    <        
                                 </tr>
                             <tbody>
                                 @foreach ($cotations as $cotation)  
@@ -26,8 +25,6 @@
                                     <td>{{ $cotation->nom }} <img src="{{URL::asset('/images')}}/{{ $cotation->image }}"></td>
                                     <td>{{ $cotation->sigle }}</td>
                                     <td> {{ $cotation->taux }}</td>
-                                    <td> 
-                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>                
@@ -40,4 +37,5 @@
         </div>
     </div>
 </div>
+@include('layouts.partials._footer')
 @endsection

@@ -16,9 +16,6 @@
                                 <tr>
                                     <th scope="col" class="col-auto small">@lang('Logo')</th>
                                     <th scope="col" class="col-auto small">@lang('Nom')</th>
-                                    <th scope="col" class="col-auto small">@lang('Valeur')</th> 
-                                    <th scope="col" class="col-auto small">@lang('Cours')</th>
-                                    <th scope="col" class="col-auto small">@lang('Evolution')</th>
                                     <th scope="col" class="col-auto small">@lang('Taux')</th>
                                     <th scope="col" class="col-auto small">@lang('Date achat')</th>
 
@@ -28,9 +25,6 @@
                                 <tr>
                                     <td> <img src="{{URL::asset('/images')}}/{{ $cotation->crypto->image }}"> </td>
                                     <td>{{ $cotation->crypto->nom }}</td>
-                                    <td>{{ $cotation->valeur }}</td>
-                                    <td> {{ $cotation->cours }} </td>
-                                    <td> {{ $cotation->evolution }} </td>
                                     <td> {{ $cotation->taux }} </td>
                                     <td> {{ \Carbon\Carbon::parse($cotation->date)->format('d/m/Y') }} </td>
                                 </tr>
@@ -45,4 +39,5 @@
         </div>
     </div>
 </div>
+@include('layouts.partials._footer')
 @endsection
