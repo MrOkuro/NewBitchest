@@ -37,11 +37,6 @@ class AdminController extends Controller
         return redirect(url()->previous());
     }
 
-    public function show()
-    {
-
-    }
-
     public function edit($id)
     {
         $user = User::find($id);
@@ -61,11 +56,11 @@ class AdminController extends Controller
         return redirect(url()->previous());
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $user = User::find($id);
         $user->delete();
-        return view('admin.index', compact('user'));
+        return view('admin.index');
 
     }
 }

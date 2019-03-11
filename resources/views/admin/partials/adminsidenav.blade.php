@@ -7,6 +7,6 @@
         
     </ul>
     <ul class="list-group">
-        <li class="list-group-item"><a href="{{ route('admin.crypto.index') }}"><i class="fa fa-list" aria-hidden="true"></i> Afficher cours des crypto monnaies</a></li>
+        <li class="list-group-item"><a href="{{ route('admin.crypto.index') }}"><i class="fa fa-chart-line" aria-hidden="true"></i> Afficher cours des crypto monnaies</a></li>
     </ul>
 </div>

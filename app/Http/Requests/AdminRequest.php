@@ -30,7 +30,15 @@ class AdminRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required',
-            //'password' => 'required',
+            'password' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+           // 'name.required' => 'Le nom est requis'           
+           
         ];
     }
 }

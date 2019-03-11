@@ -28,7 +28,9 @@ class TransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'crypto_id' => 'required',
+            'quantite_crypto' => 'required',
         ];
     }
+
 }

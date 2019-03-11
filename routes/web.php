@@ -40,7 +40,7 @@ Route::get('/admin/users/create', 'Admin\AdminController@create')->name('admin.u
 Route::post('/admin/users/store', 'Admin\AdminController@store')->name('admin.users.store');
 Route::get('/admin/users/edit/{id}', 'Admin\AdminController@edit')->name('admin.users.edit');
 Route::put('/admin/users/update/{id}', 'Admin\AdminController@update')->name('admin.users.update');
-Route::delete('/admin/users/delete/{id}', 'Admin\AdminController@delete')->name('admin.users.delete');
+Route::delete('/admin/users/delete/{id}', 'Admin\AdminController@destroy')->name('admin.users.delete');
 Route::get('/admin/crypto/liste', 'Admin\CryptoController@index_cotations_admin')->name('admin.crypto.index');
 
 

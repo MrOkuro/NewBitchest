@@ -30,7 +30,7 @@ class UserController extends Controller
     public function update($id, Request $request)
     {        
         User::find($id)->update($request->all());
-        dd($request);
+        //dd($request);
         
         if($User->update($request->input()))
         {

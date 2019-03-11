@@ -31,17 +31,19 @@ class DatabaseSeeder extends Seeder
             'admin' => '0',
             'ville' => 'TOULOUSE', 
             'adresse' =>'Rue du Capitole', 
-            'code_postal' => '31000'
+            'code_postal' => '31000',
+            'solde' => '500000'
         ]);
 
         DB::table('users')->insert([
-            'name' => 'ごく',
-            'email' => 'goku@gmail.com',
+            'name' => 'Jerome',
+            'email' => 'Jerome@gmail.com',
             'password' => bcrypt('goku'),
             'admin' =>'0',
             'ville' => 'Rouen', 
             'adresse' =>'Rue du Rond Point des Vaches', 
-            'code_postal' => '76000'
+            'code_postal' => '76000',
+            'solde' => '500000'
         ]);
     }
 }
