@@ -9,7 +9,7 @@
 
     <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Création clients</div> <br>
 
     <form class="form-horizontal" method="POST" action="{{ route('admin.users.store') }}">
                             {{ csrf_field() }}

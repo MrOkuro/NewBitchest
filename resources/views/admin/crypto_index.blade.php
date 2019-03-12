@@ -9,7 +9,7 @@
 
         <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Liste des cryptomonnaie</div>
+                    <div class="panel-heading">Liste des crypto monnaies</div> <br>
 
                     <table class="table table-bordered table-hover table-sm">
                         <thead class="thead-dark">
