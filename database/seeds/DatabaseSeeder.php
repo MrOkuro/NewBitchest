@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             'admin' => '1',
             'ville' => 'PARIS', 
             'adresse' =>'Rue de l\'administration', 
-            'code_postal' => '75000'
+            'code_postal' => '75000',
+            'solde' => '0'
         ]);
 
         DB::table('users')->insert([
@@ -32,7 +33,29 @@ class DatabaseSeeder extends Seeder
             'ville' => 'TOULOUSE', 
             'adresse' =>'Rue du Capitole', 
             'code_postal' => '31000',
-            'solde' => '500000'
+            'solde' => '0'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Kader',
+            'email' => 'kader@gmail.com',
+            'password' => bcrypt('kader'),
+            'admin' => '1',
+            'ville' => 'TOULOUSE', 
+            'adresse' =>'Rue du Capitole', 
+            'code_postal' => '31000',
+            'solde' => '0'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Bob',
+            'email' => 'bob@gmail.com',
+            'password' => bcrypt('bob'),
+            'admin' => '0',
+            'ville' => 'TOULOUSE', 
+            'adresse' =>'Rue du Capitole', 
+            'code_postal' => '31000',
+            'solde' => '0'
         ]);
 
         DB::table('users')->insert([
@@ -43,7 +66,7 @@ class DatabaseSeeder extends Seeder
             'ville' => 'Rouen', 
             'adresse' =>'Rue du Rond Point des Vaches', 
             'code_postal' => '76000',
-            'solde' => '500000'
+            'solde' => '0'
         ]);
     }
 }

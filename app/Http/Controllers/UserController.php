@@ -12,15 +12,6 @@ class UserController extends Controller
     	return view('clients.index');
     }
 
-    public function create()
-    {
-    	return view('clients.forme_solde');
-    }
-
-    
-
-
-
     public function edit($id)
     {
         $user = User::find($id);
@@ -34,7 +25,7 @@ class UserController extends Controller
         
         if($User->update($request->input()))
         {
-             $request->session()->flash('alert', ['class'=>'success','message'=>'Profil a jour mise à jour']);
+             $request->session()->flash('alert', ['class'=>'success','message'=>'Profil mis à jour']);
         }
         
         return redirect(url()->previous());

@@ -48,7 +48,6 @@ Route::get('/admin/crypto/liste', 'Admin\CryptoController@index_cotations_admin'
 Route::get('/client', 'UserController@index')->name('user.index');
 Route::get('/client/edit/{id}', 'UserController@edit')->name('user.edit');
 Route::get('/client/update/{id}', 'UserController@update')->name('user.update');
-Route::get('/client/solde/create', 'UserController@createsolde')->name('user.index.solde.create');
 Route::post('/client/solde/store', 'UserController@store')->name('user.index.solde.store');
 
 

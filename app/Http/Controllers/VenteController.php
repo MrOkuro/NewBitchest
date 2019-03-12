@@ -27,7 +27,7 @@ class VenteController extends Controller
     /*public function getVente()
     {
         $users = User::where(Auth::id())->get();
-        $total_wallet = 0;
+        $total = 0;
         $achats = array();
         $transactions = Transaction::all();
 
@@ -41,8 +41,8 @@ class VenteController extends Controller
             }
             else
             {
-                $total_wallet += $transactions->quantite_crypto*$achats->taux;
+                $solde = $users[0]->solde - $total; 
             }
-        return view('clients.partials.sidenav', compact('total_wallet', 'users'));
+        return redirect(url()->previous());
     }*/
 }

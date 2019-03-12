@@ -16,28 +16,4 @@ class AchatController extends Controller
         return view('transaction.achat',compact('cryptos'));
     }
 
-    /*public function getAchat()
-    {
-        $users = User::where(Auth::id())->get();
-        $total_wallet = 0;
-        $achats = array();
-        $transactions = Transaction::all();
-
-            if(!isset($transactions))
-            {
-                foreach ($achats as $achat) 
-                {
-                    $taux = $transactions->quantite_crypto*$achats;
-                }
-                
-            }
-            else
-            {
-                $total_wallet += $transactions->quantite_crypto*$achats->taux;
-            }
-        return view('clients.partials.sidenav', compact('total_wallet', 'users'));
-    } */
-
-
-
 }

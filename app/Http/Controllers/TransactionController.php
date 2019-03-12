@@ -67,10 +67,22 @@ class TransactionController extends Controller
                 $achats_liste[$transaction->crypto_id]['montant'] = $achats_liste[$transaction->crypto_id]['quantite_crypto'] * $cotation;   
     
                 $total += $achats_liste[$transaction->crypto_id]['montant'];                
-            }    
-    
+            }   
+
             $solde = $users[0]->solde - $total;    
             DB::table('users')->where('id', Auth::id())->update(['solde' => $solde]);
+            
+           /* if( $solde = $users[0]->solde - $total < 0)
+            {
+                //dd($solde);
+                return back()->with('errorMessage','Votre solde \' est pas suffisant pour effectuer cet achat');
+            }
+            else
+            {
+                DB::table('users')->where('id', Auth::id())->update(['solde' => $solde]);   
+            } */
+    
+
 
            $request->session()->flash('alert', ['class'=>'success','message'=>'Nouvel achat enregistré.']);
         }
